@@ -147,6 +147,14 @@
     "message": "Enter key <i class=\"fa fa-angle-right\"></i>",
     "description": "Label to enter key that was sent to user's email"
   },
+  "Main description": {
+    "message": "VideoRemix is a dynamic & revolutionary video solution for cloud-based video creation, editing, & personalization. Create personalize videos with NO rendering!",
+    "description": "Main label"
+  },
+  "Main subtitle": {
+    "message": "Cloud-Based. Personalization. No Rendering.",
+    "description": "Main Subtitle"
+  },
   "you can switch to webmaker login":  {
     "message": "You can switch back to our VideoCloud Login experience. We will send you login emails so you do not need a password.",
     "description": "Message reminding users that they can switch back to the Login Key system instead of using a password."

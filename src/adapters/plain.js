@@ -23,6 +23,7 @@ function _each(baseEl, selector, cb) {
 var lang_data = {
   'en-US': require('../../locale/en_US/webmaker-login.json')
 };
+
 var template = new nunjucks.Environment();
 template.addFilter('i18n', function (key) {
   return lang_data['en-US'][key].message;
@@ -44,9 +45,9 @@ var ui = {
   reset: template.renderString(fs.readFileSync(__dirname + '/../../templates/reset-modal.html', {
     encoding: 'utf8'
   }), template_options),
-  wrapper: fs.readFileSync(__dirname + '/../../templates/modal-wrapper.html', {
+  wrapper: template.renderString(fs.readFileSync(__dirname + '/../../templates/modal-wrapper.html', {
     encoding: 'utf8'
-  })
+  }), template_options)
 };
 
 var _create_modal_fragment = function (template) {
