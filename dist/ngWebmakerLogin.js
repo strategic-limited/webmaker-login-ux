@@ -1523,7 +1523,6 @@ ngModule.directive('wmSignin', [
             };
 
             $scope.submitPassword = function () {
-              console.log($scope.user);
               signinController.verifyPassword($scope.user.uid, $scope.user.password, $scope.user.rememberMe);
             };
 
