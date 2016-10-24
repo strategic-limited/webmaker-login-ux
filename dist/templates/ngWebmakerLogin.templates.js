@@ -235,9 +235,9 @@ angular.module("signin-modal.html", []).run(["$templateCache", function($templat
   "    <div ng-show=\"currentState === MODALSTATE.enterUid;\">\n" +
   "      <div class=\"form-group\">\n" +
   "        <label for=\"uid\">&nbsp;</label>\n" +
-  "        <input name=\"uid\" placeholder=\"USERNAME OR EMAIL\" class=\"form-control\" ng-model=\"user.uid\" autocomplete=\"on\" required tabindex=\"1\" autofocus=\"true\" focus-on=\"login-uid\" ng-keyup=\"$event.keyCode === 13 && !sendingRequest && submitUid()\">\n" +
+  "        <input name=\"uid\" placeholder=\"USERNAME OR EMAIL\" class=\"form-control\" ng-change=\"trimInput(user.uid, 'uid')\" ng-model=\"user.uid\" autocomplete=\"on\" required tabindex=\"1\" autofocus=\"true\" focus-on=\"login-uid\" ng-keyup=\"$event.keyCode === 13 && !sendingRequest && submitUid()\">\n" +
   "        <label for=\"password\">&nbsp;</label>\n" +
-  "        <input type=\"password\" placeholder=\"PASSWORD\" class=\"form-control\" required name=\"password\" ng-model=\"user.password\" tabindex=\"2\" focus-on=\"enter-password\" ng-keyup=\"$event.keyCode === 13 && user.password && !sendingRequest && submitPassword()\">\n" +
+  "        <input type=\"password\" placeholder=\"PASSWORD\" class=\"form-control\" ng-change=\"trimInput(user.password, 'password')\" required name=\"password\" ng-model=\"user.password\" tabindex=\"2\" focus-on=\"enter-password\" ng-keyup=\"$event.keyCode === 13 && user.password && !sendingRequest && submitPassword()\">\n" +
   "      </div>\n" +
   "      <div class=\"alert alert-warning\" ng-show=\"form.user.$error.noAccount\" bind-trusted-html=\"'No account found for your uid' | i18n\"></div>\n" +
   "       <div class=\"alert alert-danger\" ng-show=\"form.user.$error.passwordSigninFailed\" ng-bind-html=\"'passLoginFailed' | i18n\"></div>\n" +

@@ -294,7 +294,7 @@ ngModule.directive('wmSignin', [
 
             $scope.MODALSTATE = MODALSTATE;
             $scope.currentState = MODALSTATE.enterUid;
-            $scope.enterEmail = enterEmail;
+            $scope.enterEmail = MODALSTATE.enterEmail;
             $scope.passwordWasReset = passwordWasReset;
             $scope.sendingRequest = false;
             $scope.disablePersona = disablePersona;
@@ -372,6 +372,12 @@ ngModule.directive('wmSignin', [
               $modalInstance.close();
               $rootScope.$broadcast('login', user);
             });
+
+            $scope.trimInput = function (string, key) {
+              if (string) {
+                $scope.user[key] = string.replace(/^\s+|\s+$/gm,'');
+              }
+            };
 
             $scope.submitUid = function () {
               signinController.submitUid($scope.user.uid, $location.path());
