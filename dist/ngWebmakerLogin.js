@@ -1421,7 +1421,7 @@ ngModule.directive('wmSignin', [
 
             $scope.MODALSTATE = MODALSTATE;
             $scope.currentState = MODALSTATE.enterUid;
-            $scope.enterEmail = enterEmail;
+            $scope.enterEmail = MODALSTATE.enterEmail;
             $scope.passwordWasReset = passwordWasReset;
             $scope.sendingRequest = false;
             $scope.disablePersona = disablePersona;
@@ -1500,6 +1500,12 @@ ngModule.directive('wmSignin', [
               $rootScope.$broadcast('login', user);
             });
 
+            $scope.trimInput = function (string, key) {
+              if (string) {
+                $scope.user[key] = string.replace(/^\s+|\s+$/gm,'');
+              }
+            }
+
             $scope.submitUid = function () {
               signinController.submitUid($scope.user.uid, $location.path());
             };
@@ -1517,6 +1523,7 @@ ngModule.directive('wmSignin', [
             };
 
             $scope.submitPassword = function () {
+              console.log($scope.user);
               signinController.verifyPassword($scope.user.uid, $scope.user.password, $scope.user.rememberMe);
             };
 
@@ -1542,6 +1549,7 @@ ngModule.directive('wmSignin', [
 
             $scope.usePersona = function () {
               $rootScope.personaLogin();
+              console.log($scope.user);
 
               // the modal code calls scope.$apply, which can throw.
               // dropping it in this timeout fixes the race condition.
