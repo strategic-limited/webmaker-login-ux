@@ -1504,7 +1504,7 @@ ngModule.directive('wmSignin', [
               if (string) {
                 $scope.user[key] = string.replace(/^\s+|\s+$/gm,'');
               }
-            }
+            };
 
             $scope.submitUid = function () {
               signinController.submitUid($scope.user.uid, $location.path());
@@ -1548,7 +1548,6 @@ ngModule.directive('wmSignin', [
 
             $scope.usePersona = function () {
               $rootScope.personaLogin();
-              console.log($scope.user);
 
               // the modal code calls scope.$apply, which can throw.
               // dropping it in this timeout fixes the race condition.
