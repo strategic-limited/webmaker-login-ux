@@ -9997,6 +9997,28 @@ WebmakerLogin.prototype.login = function (uid_hint, options) {
     });
   });
 
+  _each(modal_fragment, 'input[ng-change]', function (i, el) {
+    var scoped = {
+      trimInput: function (string, key) {
+        var string = el.value;
+        if (string) {
+          var trimmed = string.replace(/^\s+|\s+$/gm, '');
+          if (string !== trimmed) {
+            scope.user[key] = trimmed;
+            el.value = trimmed;
+          }
+        }
+      }
+    };
+
+    var action = function () {
+      var evaluate = expressions.compile(el.getAttribute('ng-change'));
+      evaluate(scoped);
+    };
+
+    el.addEventListener('change', action);
+  })
+
   modal_fragment.querySelector('a[ng-click="requestReset()"]').addEventListener('click', function (event) {
     event.preventDefault();
     controller.requestReset(scope.user.uid);
