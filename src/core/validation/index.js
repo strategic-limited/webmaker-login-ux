@@ -3,7 +3,7 @@ var usernameRegex = /^[a-zA-Z0-9\-]{1,20}$/,
   containsBothCases = /^.*(?=.*[a-z])(?=.*[A-Z]).*$/,
   containsDigit = /\d/;
 
-var MIN_PASSWORD_LEN = 8;
+var MIN_PASSWORD_LEN = 6;
 
 module.exports = {
   isEmail: function (email) {
