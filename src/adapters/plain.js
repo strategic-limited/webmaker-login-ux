@@ -193,7 +193,6 @@ WebmakerLogin.prototype.create = function (email_hint, username_hint, agreeToTer
     },
     user: {},
     sendingRequest: false,
-    isValidPassword: false,
     welcomeModalIdx: -1
   };
 
@@ -603,7 +602,7 @@ WebmakerLogin.prototype.request_password_reset = function (token) {
     scope.eightCharsState = !result.lengthValid ? 'invalid' : blur ? 'valid' : '';
     scope.oneEachCaseState = !result.caseValid ? 'invalid' : blur ? 'valid' : '';
     scope.oneNumberState = !result.digitValid ? 'invalid' : blur ? 'valid' : '';
-    scope.isValidPassword = result.lengthValid;
+    scope.isValidPassword = result.lengthValid && result.caseValid && result.digitValid;
 
     _run_expressions(modal, scope);
   });
