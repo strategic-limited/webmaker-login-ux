@@ -179,7 +179,7 @@ angular.module("reset-modal.html", []).run(["$templateCache", function($template
   "        </ul>\n" +
   "      </div>\n" +
   "      <div class=\"cta-links clearfix\">\n" +
-  "        <button style=\"display: inline !important\" ng-click=\"submitResetRequest()\" ng-disabled=\"sendingRequest || !password.value || !password.confirmValue || !passwordsMatch || form.password.$error.passwordsMustMatch || eightCharsState !== 'invalid'\" class=\"reset-password btn btn-primary hidden-xs-login\" type=\"button\" tabindex=\"3\">{{ 'Submit' | i18n }}</button>\n" +
+  "        <button style=\"display: inline !important\" ng-click=\"submitResetRequest()\" ng-disabled=\"sendingRequest || !password.value || !password.confirmValue || !passwordsMatch || form.password.$error.passwordsMustMatch\" class=\"reset-password btn btn-primary hidden-xs-login\" type=\"button\" tabindex=\"3\">{{ 'Submit' | i18n }}</button>\n" +
   "      </div>\n" +
   "    </div>\n" +
   "  </form>\n" +
