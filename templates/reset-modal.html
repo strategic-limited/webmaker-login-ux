@@ -36,7 +36,7 @@
         </ul>
       </div>
       <div class="cta-links clearfix">
-        <button style="display: inline !important" ng-click="submitResetRequest()" ng-disabled="sendingRequest || !password.value || !password.confirmValue || !passwordsMatch || form.password.$error.passwordsMustMatch || !lengthValid" class="reset-password btn btn-primary hidden-xs-login" type="button" tabindex="3">{{ 'Submit' | i18n }}</button>
+        <button style="display: inline !important" ng-click="submitResetRequest()" ng-disabled="sendingRequest || !password.value || !password.confirmValue || !passwordsMatch || form.password.$error.passwordsMustMatch || !isValidPassword" class="reset-password btn btn-primary hidden-xs-login" type="button" tabindex="3">{{ 'Submit' | i18n }}</button>
       </div>
     </div>
   </form>

@@ -600,10 +600,9 @@ WebmakerLogin.prototype.request_password_reset = function (token) {
     }
 
     scope.eightCharsState = !result.lengthValid ? 'invalid' : blur ? 'valid' : '';
-    scope.lengthValid = result.lengthValid;
     scope.oneEachCaseState = !result.caseValid ? 'invalid' : blur ? 'valid' : '';
     scope.oneNumberState = !result.digitValid ? 'invalid' : blur ? 'valid' : '';
-    scope.isValidPassword = result.lengthValid && result.caseValid && result.digitValid;
+    scope.isValidPassword = result.lengthValid;
 
     _run_expressions(modal, scope);
   });
