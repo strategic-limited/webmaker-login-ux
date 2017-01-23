@@ -193,6 +193,7 @@ WebmakerLogin.prototype.create = function (email_hint, username_hint, agreeToTer
     },
     user: {},
     sendingRequest: false,
+    isValidPassword: false,
     welcomeModalIdx: -1
   };
 

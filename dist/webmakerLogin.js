@@ -9733,6 +9733,7 @@ WebmakerLogin.prototype.create = function (email_hint, username_hint, agreeToTer
     },
     user: {},
     sendingRequest: false,
+    isValidPassword: false,
     welcomeModalIdx: -1
   };
 
@@ -10106,7 +10107,8 @@ WebmakerLogin.prototype.request_password_reset = function (token) {
       }
     },
     password: {},
-    sendingRequest: false
+    sendingRequest: false,
+    isValidPassword: false
   };
 
   var modal_fragment = _create_modal_fragment(ui.reset);
