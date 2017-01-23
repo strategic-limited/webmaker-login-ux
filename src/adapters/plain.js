@@ -567,8 +567,7 @@ WebmakerLogin.prototype.request_password_reset = function (token) {
       }
     },
     password: {},
-    sendingRequest: false,
-    isValidPassword: false
+    sendingRequest: false
   };
 
   var modal_fragment = _create_modal_fragment(ui.reset);
