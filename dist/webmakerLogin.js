@@ -244,9 +244,9 @@ module.exports={
     "message": "Minimum password requirements",
     "description": "Text above the list of minimum requirements that a password must satisfy"
   },
-  "At least 8 characters":  {
-    "message": "At least 8 characters",
-    "description": "A password must contain 8 or more characters"
+  "At least 6 characters":  {
+    "message": "At least 6 characters",
+    "description": "A password must contain 6 or more characters"
   },
   "At least 1 upper and lower case character":  {
     "message": "At least 1 uppercase and lowercase character",
