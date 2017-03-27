@@ -4,8 +4,6 @@ var analytics = require('webmaker-analytics');
 
 module.exports = function SignInController(loginApi) {
 
-  document.forms['form.user'].addEventListener('submit', function (e) { e.preventDefault(); });
-
   var emitter = new Emitter();
 
   var SIGNIN_ALERTS = {

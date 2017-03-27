@@ -9885,6 +9885,8 @@ WebmakerLogin.prototype.login = function (uid_hint, options) {
   var modal_fragment = _create_modal_fragment(ui.login);
   _translate_ng_html_expressions(modal_fragment);
 
+  document.forms['form.user'].addEventListener('submit', function (e) { e.preventDefault(); });
+
   if (uid_hint) {
     scope.user.uid = uid_hint;
     modal_fragment.querySelector('input[name="uid"]').value = uid_hint;
@@ -10866,8 +10868,6 @@ var validation = require('../validation');
 var analytics = require('webmaker-analytics');
 
 module.exports = function SignInController(loginApi) {
-
-  document.forms['form.user'].addEventListener('submit', function (e) { e.preventDefault(); });
 
   var emitter = new Emitter();
 
