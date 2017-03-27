@@ -4,6 +4,8 @@ var analytics = require('webmaker-analytics');
 
 module.exports = function SignInController(loginApi) {
 
+  document.forms['form.user'].addEventListener('submit', function (e) { e.preventDefault(); });
+
   var emitter = new Emitter();
 
   var SIGNIN_ALERTS = {
@@ -139,6 +141,7 @@ module.exports = function SignInController(loginApi) {
       setRequestState(true);
       var validFor = rememberMe ? 'one-year' : '';
       loginApi.verifyPassword(uid, password, validFor, function verifyPasswordCallback(err, resp, body) {
+        document.forms['form.user'].submit();
         setRequestState(false);
         if (err) {
           return displayAlert(SIGNIN_ALERTS.serverError);

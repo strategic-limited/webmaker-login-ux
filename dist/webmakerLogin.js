@@ -10235,8 +10235,6 @@ module.exports = function WebmakerLoginCore(options) {
     });
   }
 
-  //window.addEventListener('focus', verify);
-
   return {
     on: function (event, listener) {
       emitter.on(event, listener);
@@ -10245,7 +10243,7 @@ module.exports = function WebmakerLoginCore(options) {
       emitter.off(event, listener);
     },
     joinWebmaker: function (showCTA) {
-      return new state.JoinController(loginAPI, !! showCTA);
+      return new state.JoinController(loginAPI, !!showCTA);
     },
     signIn: function () {
       return new state.SignInController(loginAPI);
@@ -10869,6 +10867,8 @@ var analytics = require('webmaker-analytics');
 
 module.exports = function SignInController(loginApi) {
 
+  document.forms['form.user'].addEventListener('submit', function (e) { e.preventDefault(); });
+
   var emitter = new Emitter();
 
   var SIGNIN_ALERTS = {
@@ -11004,6 +11004,7 @@ module.exports = function SignInController(loginApi) {
       setRequestState(true);
       var validFor = rememberMe ? 'one-year' : '';
       loginApi.verifyPassword(uid, password, validFor, function verifyPasswordCallback(err, resp, body) {
+        document.forms['form.user'].submit();
         setRequestState(false);
         if (err) {
           return displayAlert(SIGNIN_ALERTS.serverError);

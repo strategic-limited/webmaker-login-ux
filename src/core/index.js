@@ -22,8 +22,6 @@ module.exports = function WebmakerLoginCore(options) {
     });
   }
 
-  //window.addEventListener('focus', verify);
-
   return {
     on: function (event, listener) {
       emitter.on(event, listener);
@@ -32,7 +30,7 @@ module.exports = function WebmakerLoginCore(options) {
       emitter.off(event, listener);
     },
     joinWebmaker: function (showCTA) {
-      return new state.JoinController(loginAPI, !! showCTA);
+      return new state.JoinController(loginAPI, !!showCTA);
     },
     signIn: function () {
       return new state.SignInController(loginAPI);
