@@ -9886,14 +9886,10 @@ WebmakerLogin.prototype.login = function (uid_hint, options) {
   _translate_ng_html_expressions(modal_fragment);
 
   setTimeout(function () {
-    var loginForm = document.querySelector('form[name="form.user"]');
-    loginForm.onsubmit = function (e) {
-      if (loginForm.onsubmit) {
-        loginForm.onsubmit(e);
-      }
+    document.querySelector('form[name="form.user"]').attachEvent('onsubmit', function (e) {
       e.preventDefault();
       return false;
-    };
+    });
   }, 100);
 
   if (uid_hint) {
