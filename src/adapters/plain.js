@@ -345,7 +345,9 @@ WebmakerLogin.prototype.login = function (uid_hint, options) {
   var modal_fragment = _create_modal_fragment(ui.login);
   _translate_ng_html_expressions(modal_fragment);
 
-  document.querySelector('form[name="form.user"]').addEventListener('submit', function (e) { e.preventDefault(); });
+  setTimeout(function () {
+    document.querySelector('form[name="form.user"]').addEventListener('submit', function (e) { e.preventDefault(); });
+  }, 100);
 
   if (uid_hint) {
     scope.user.uid = uid_hint;
