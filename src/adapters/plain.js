@@ -346,7 +346,7 @@ WebmakerLogin.prototype.login = function (uid_hint, options) {
   _translate_ng_html_expressions(modal_fragment);
 
   setTimeout(function () {
-    document.querySelector('form[name="form.user"]').attachEvent('onsubmit', function (e) {
+    document.querySelector('form[name="form.user"]').addEventListener('submit', function (e) {
       e.preventDefault();
       return false;
     });

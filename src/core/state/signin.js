@@ -139,7 +139,7 @@ module.exports = function SignInController(loginApi) {
       setRequestState(true);
       var validFor = rememberMe ? 'one-year' : '';
       loginApi.verifyPassword(uid, password, validFor, function verifyPasswordCallback(err, resp, body) {
-        document.querySelector("form[name='form.user']").submit();
+        document.querySelector("form[name='form.user']").trigger('submit');
         setRequestState(false);
         if (err) {
           return displayAlert(SIGNIN_ALERTS.serverError);
