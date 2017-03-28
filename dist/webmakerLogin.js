@@ -9886,7 +9886,10 @@ WebmakerLogin.prototype.login = function (uid_hint, options) {
   _translate_ng_html_expressions(modal_fragment);
 
   setTimeout(function () {
-    document.querySelector('form[name="form.user"]').addEventListener('submit', function (e) { e.preventDefault(); });
+    document.querySelector('form[name="form.user"]').addEventListener('submit', function (e) {
+      e.preventDefault();
+      return false;
+    });
   }, 100);
 
   if (uid_hint) {
