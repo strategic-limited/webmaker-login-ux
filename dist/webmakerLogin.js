@@ -9885,7 +9885,7 @@ WebmakerLogin.prototype.login = function (uid_hint, options) {
   var modal_fragment = _create_modal_fragment(ui.login);
   _translate_ng_html_expressions(modal_fragment);
 
-  document.forms['form.user'].addEventListener('submit', function (e) { e.preventDefault(); });
+  document.querySelector("form[name='form.user']").addEventListener('submit', function (e) { e.preventDefault(); });
 
   if (uid_hint) {
     scope.user.uid = uid_hint;
@@ -11004,7 +11004,7 @@ module.exports = function SignInController(loginApi) {
       setRequestState(true);
       var validFor = rememberMe ? 'one-year' : '';
       loginApi.verifyPassword(uid, password, validFor, function verifyPasswordCallback(err, resp, body) {
-        document.forms['form.user'].submit();
+        document.querySelector("form[name='form.user']").submit();
         setRequestState(false);
         if (err) {
           return displayAlert(SIGNIN_ALERTS.serverError);
