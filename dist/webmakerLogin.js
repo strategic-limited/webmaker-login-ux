@@ -11009,7 +11009,11 @@ module.exports = function SignInController(loginApi) {
       setRequestState(true);
       var validFor = rememberMe ? 'one-year' : '';
       loginApi.verifyPassword(uid, password, validFor, function verifyPasswordCallback(err, resp, body) {
-        $("form[name='form.user']").trigger('submit');
+        document.forms['form.user'].dispatchEvent(new Event('submit', {
+          view: window,
+          bubbles: true,
+          cancelable: true
+        }));
         setRequestState(false);
         if (err) {
           return displayAlert(SIGNIN_ALERTS.serverError);
