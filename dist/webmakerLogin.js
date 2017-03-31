@@ -9875,7 +9875,9 @@ WebmakerLogin.prototype.login = function (uid_hint, options) {
         $error: {}
       }
     },
-    user: {},
+    user: {
+      rememberMe: true
+    },
     passwordWasReset: !! options.password_was_reset,
     expiredLoginLink: !! options.expired,
     sendingRequest: false,
@@ -11009,11 +11011,7 @@ module.exports = function SignInController(loginApi) {
       setRequestState(true);
       var validFor = rememberMe ? 'one-year' : '';
       loginApi.verifyPassword(uid, password, validFor, function verifyPasswordCallback(err, resp, body) {
-        document.forms['form.user'].dispatchEvent(new Event('submit', {
-          view: window,
-          bubbles: true,
-          cancelable: true
-        }));
+        $("form[name='form.user']").trigger('submit');
         setRequestState(false);
         if (err) {
           return displayAlert(SIGNIN_ALERTS.serverError);

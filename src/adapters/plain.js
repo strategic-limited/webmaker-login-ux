@@ -335,7 +335,9 @@ WebmakerLogin.prototype.login = function (uid_hint, options) {
         $error: {}
       }
     },
-    user: {},
+    user: {
+      rememberMe: true
+    },
     passwordWasReset: !! options.password_was_reset,
     expiredLoginLink: !! options.expired,
     sendingRequest: false,
