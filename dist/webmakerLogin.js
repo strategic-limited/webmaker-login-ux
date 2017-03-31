@@ -9965,6 +9965,7 @@ WebmakerLogin.prototype.login = function (uid_hint, options) {
   });
 
   _each(modal_fragment, 'input[name="rememberMe"]', function (i, el) {
+    el.checked = true;
     el.addEventListener('change', function (e) {
       scope.user.rememberMe = e.target.checked;
       _run_expressions(modal, scope);
@@ -10089,7 +10090,6 @@ WebmakerLogin.prototype.login = function (uid_hint, options) {
     _close_modal();
   }); */
 
-  _run_expressions(modal, scope);
   controller.start();
 };
 
