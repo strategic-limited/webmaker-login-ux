@@ -486,7 +486,7 @@ WebmakerLogin.prototype.login = function (uid_hint, options) {
     };
 
     el.addEventListener('change', action);
-  })
+  });
 
   modal_fragment.querySelector('a[ng-click="requestReset()"]').addEventListener('click', function (event) {
     event.preventDefault();
@@ -538,6 +538,7 @@ WebmakerLogin.prototype.login = function (uid_hint, options) {
   }.bind(this));
 
   _run_expressions(modal_fragment, scope);
+  _run_expressions(modal, scope);
   _open_modal(modal_fragment);
   var modal = document.querySelector('body > div.modal');
   _attach_close(modal);
