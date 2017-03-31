@@ -538,7 +538,6 @@ WebmakerLogin.prototype.login = function (uid_hint, options) {
   }.bind(this));
 
   _run_expressions(modal_fragment, scope);
-  _run_expressions(modal, scope);
   _open_modal(modal_fragment);
   var modal = document.querySelector('body > div.modal');
   _attach_close(modal);
@@ -550,6 +549,7 @@ WebmakerLogin.prototype.login = function (uid_hint, options) {
     _close_modal();
   }); */
 
+  _run_expressions(modal, scope);
   controller.start();
 };
 
