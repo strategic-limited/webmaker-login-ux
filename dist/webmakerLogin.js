@@ -9576,7 +9576,8 @@ template.addFilter('i18n', function (key) {
   return lang_data['en-US'][key].message;
 });
 var template_options = {
-  lang: 'en-US'
+  lang: 'en-US',
+  isProd: document.querySelector("meta[name=is-prod]").content ==='true'
 };
 expressions.filters.i18n = function (key) {
   return lang_data['en-US'][key].message;
