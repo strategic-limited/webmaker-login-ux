@@ -9848,7 +9848,7 @@ WebmakerLogin.prototype.create = function (email_hint, username_hint, agreeToTer
 
   var modal = document.querySelector('body > div.modal');
   _attach_close(modal);
-  document.querySelector('body > div.modal > .modal-dialog').addEventListener("click", function (e) {
+  document.querySelector('body > div.modal > .modal-dialog:not(input.form-control)').addEventListener("click", function (e) {
     e.stopPropagation();
   });
   document.querySelector('body > div.modal').addEventListener("click", function () {
@@ -10083,7 +10083,7 @@ WebmakerLogin.prototype.login = function (uid_hint, options) {
   _open_modal(modal_fragment);
   var modal = document.querySelector('body > div.modal');
   _attach_close(modal);
-  document.querySelector('body > div.modal > .modal-dialog').addEventListener("click", function (e) {
+  document.querySelector('body > div.modal > .modal-dialog:not(input.form-control)').addEventListener("click", function (e) {d
     e.stopPropagation();
   });
   /* Prevent click modal to close
