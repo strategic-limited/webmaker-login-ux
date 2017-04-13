@@ -9848,8 +9848,10 @@ WebmakerLogin.prototype.create = function (email_hint, username_hint, agreeToTer
 
   var modal = document.querySelector('body > div.modal');
   _attach_close(modal);
-  document.querySelector('body > div.modal > .modal-dialog:not(input.form-control)').addEventListener("click", function (e) {
-    e.stopPropagation();
+  document.querySelector('body > div.modal > .modal-dialog').addEventListener("click", function (e) {
+    if(e.srcElement !== document.querySelector('input.form-control')){
+      e.stopPropagation();
+    }
   });
   document.querySelector('body > div.modal').addEventListener("click", function () {
     _close_modal();
@@ -10083,8 +10085,10 @@ WebmakerLogin.prototype.login = function (uid_hint, options) {
   _open_modal(modal_fragment);
   var modal = document.querySelector('body > div.modal');
   _attach_close(modal);
-  document.querySelector('body > div.modal > .modal-dialog:not(input.form-control)').addEventListener("click", function (e) {d
-    e.stopPropagation();
+  document.querySelector('body > div.modal > .modal-dialog').addEventListener("click", function (e) {d
+    if(e.srcElement !== document.querySelector('input.form-control')){
+      e.stopPropagation();
+    }
   });
   /* Prevent click modal to close
   document.querySelector('body > div.modal').addEventListener("click", function () {
