@@ -1432,7 +1432,7 @@ function request(options, callback) {
     else if(typeof options.body !== 'string')
       options.body = JSON.stringify(options.body)
   }
-  
+
   //BEGIN QS Hack
   var serialize = function(obj) {
     var str = [];
@@ -1442,7 +1442,7 @@ function request(options, callback) {
       }
     return str.join("&");
   }
-  
+
   if(options.qs){
     var qs = (typeof options.qs == 'string')? options.qs : serialize(options.qs);
     if(options.uri.indexOf('?') !== -1){ //no get params
@@ -1452,7 +1452,7 @@ function request(options, callback) {
     }
   }
   //END QS Hack
-  
+
   //BEGIN FORM Hack
   var multipart = function(obj) {
     //todo: support file type (useful?)
@@ -1475,7 +1475,7 @@ function request(options, callback) {
     result.type = 'multipart/form-data; boundary='+result.boundry;
     return result;
   }
-  
+
   if(options.form){
     if(typeof options.form == 'string') throw('form name unsupported');
     if(options.method === 'POST'){
@@ -10085,7 +10085,7 @@ WebmakerLogin.prototype.login = function (uid_hint, options) {
   _open_modal(modal_fragment);
   var modal = document.querySelector('body > div.modal');
   _attach_close(modal);
-  document.querySelector('body > div.modal > .modal-dialog').addEventListener("click", function (e) {d
+  document.querySelector('body > div.modal > .modal-dialog').addEventListener("click", function (e) {
     if(e.srcElement !== document.querySelector('input.form-control')){
       e.stopPropagation();
     }
