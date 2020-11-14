@@ -120,7 +120,7 @@
     "description": "link text for the password reset function"
   },
   "Click to Reset your password":  {
-    "message": "Click to Reset your password",
+    "message": "Reset password",
     "description": "Link text for the password reset function"
   },
   "checkEmail":  {
