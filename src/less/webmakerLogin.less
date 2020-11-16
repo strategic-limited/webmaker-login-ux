@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Muli');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @wlux-screen-xs-min: 480px;
 @wlux-screen-xs-max: 479px;
 @wlux-green: #3fb58e;
@@ -9,7 +9,7 @@
 @wlux-mediumGrey: #A5BECE;
 @wlux-lightGrey: #E1EBF1;
 @wlux-lightGreyUnsaturated: #F5F5F5;
-@font-family-sans-serif-v2: "Muli", sans-serif;
+@font-family-sans-serif-v2: "Inter", sans-serif;
 @white: #FFFFFF;
 
 @media screen and  (min-device-width: 320px) and (max-device-width: 375px) and (orientation: portrait){
@@ -818,4 +818,225 @@ p.subtitle-descrition {
   }
 }
 
+
+// todo need to rewrite all these styles
+
+.login-background {
+  height: 100vh;
+  box-sizing: border-box;
+}
+.modal-backdrop {
+  background-color: #121212;
+  background-position: inherit;
+}
+.webmaker-login-ux.fade.in {
+  display: flex !important;
+  flex-direction: column;
+}
+.modal-description {
+  width: 100% !important;
+  max-width: 900px;
+  margin: 0 auto 50px !important;
+  height: auto !important;
+  float: none !important;
+  order: -1;
+  padding: 0 !important;
+  padding: 0 20px;
+}
+.modal-description div {
+  font-size: 18px;
+  line-height: 30px;
+  color: #8A8F98;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+}
+.modal-description b {
+  width: 80%;
+  display: block;
+  margin: 100px auto 50px;
+  font-size: 48px;
+  line-height: 54px;
+  font-weight: bolder;
+  text-align: center;
+  color: #fff;
+}
+.modal-dialog {
+  width: 434px !important;
+  height: auto !important;
+  float: none !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  line-height: 1 !important;
+}
+.modal-content {
+  padding: 0 !important;
+  border: none !important;
+}
+.modal-content .form-group {
+  margin-bottom: 70px !important;
+}
+.modal-content .form-group label {
+  display: none !important;
+}
+.modal-content .form-group .form-control {
+  height: auto;
+  border-bottom: 2px solid #505068;
+  padding: 10px 0;
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 300;
+  font-family: "Inter", sans-serif;
+}
+.modal-content .form-group .form-control:first-of-type {
+  margin-bottom: 25px;
+}
+.modal-content .form-group .form-control::-webkit-input-placeholder {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 300;
+  text-align: center;
+}
+.modal-content .form-group .form-control::-moz-placeholder {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 300;
+  text-align: center;
+}
+.modal-content .form-group .form-control:-ms-input-placeholder {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 300;
+  text-align: center;
+}
+.modal-content .form-group .form-control:-moz-placeholder {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 300;
+  text-align: center;
+}
+.modal-body .cta-links {
+  padding: 0 !important;
+}
+.modal-body .cta-links .submit-password.btn.btn-primary {
+  width: 262px !important;
+  height: 55px !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #EB5054 !important;
+  border-radius: 27.5px !important;
+  box-sizing: border-box;
+  font-weight: 300 !important;
+  background: none !important;
+  margin: 0 auto 45px;
+  float: none !important;
+  text-transform: capitalize;
+  font-size: 22px !important;
+  font-family: "Inter", sans-serif;
+}
+.modal-body {
+  padding: 0 !important;
+}
+.vrlogo {
+  display: none !important;
+}
+.modal-dialog .remember-me-password.checkbox {
+  margin-bottom: 19px !important;
+}
+.modal-dialog .remember-me-password label {
+  font: 13px 'Proxima Nova', sans-serif;
+  color: #fff;
+  position: relative;
+  text-transform: capitalize;
+}
+.modal-dialog .remember-me-password label div {
+  width: 17px;
+  height: 17px;
+  border: 1px solid #505068;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-dialog .remember-me-password label div span:after {
+  content: none !important;
+}
+.modal-dialog .remember-me-password label div span {
+  width: 4px;
+  height: 4px !important;
+  border-radius: 50%;
+  background: #EB5054;
+}
+.modal-dialog .cta-links p {
+  margin-top: 0 !important;
+  color: #9292B5;
+}
+.modal-dialog .cta-links p a {
+  color: #9292B5;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-right: 3px;
+}
+.modal-dialog .cta-links p a:last-of-type {
+  margin-left: 3px;
+  margin-right: 0;
+}
+.modal-body .alert.alert-danger.hide + .cta-links p:first-of-type {
+  width: 262px !important;
+  height: 55px !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #EB5054 !important;
+  border-radius: 27.5px !important;
+  box-sizing: border-box;
+  font-weight: 300 !important;
+  background: none !important;
+  margin: 0 auto 70px;
+  float: none !important;
+}
+.modal-body .alert.alert-danger.hide + .cta-links p:last-of-type a {
+  color: #9292B5;
+  font: 13px 'Inter', sans-serif;
+  text-transform: uppercase;
+  display: block;
+  padding-left: 17px;
+  position: relative;
+}
+.modal-body .alert.alert-danger.hide + .cta-links p:last-of-type a:before {
+  content: "<";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 17px;
+}
+.modal-body .alert.alert-danger.hide + .cta-links p:first-of-type a {
+  text-transform: capitalize;
+  font-size: 22px !important;
+  font-family: "Inter", sans-serif;
+  color: #fff;
+}
+.mailIcon  {
+  display: flex;
+  flex-direction: column;
+}
+.mailIcon svg {
+  width: 112px;
+  height: 63px;
+  float: none;
+  order: 1;
+}
+.mailIcon p {
+  float: none;
+  margin: 50px auto !important;
+  text-align: center !important;
+  color: #fff;
+  font: 20px 'Inter', sans-serif;
+  text-transform: capitalize;
+}
 
