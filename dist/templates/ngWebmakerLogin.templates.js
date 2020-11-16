@@ -129,8 +129,6 @@ angular.module("modal-wrapper.html", []).run(["$templateCache", function($templa
   "    <div class=\"vrlogo\" style='background-image: url(\"{{loginLogo}}\")'></div>\n" +
   "    <div>\n" +
   "      <b>{{'Wrapper Title' | i18n}} </b>\n" +
-  "      <br>\n" +
-  "      <br>\n" +
   "      {{'Wrapper Subtitle' | i18n}}\n" +
   "    </div>\n" +
   "\n" +
@@ -235,7 +233,7 @@ angular.module("signin-modal.html", []).run(["$templateCache", function($templat
   "    <div ng-show=\"currentState === MODALSTATE.enterUid;\">\n" +
   "      <div class=\"form-group\">\n" +
   "        <label for=\"uid\">&nbsp;</label>\n" +
-  "        <input name=\"uid\" placeholder=\"USERNAME OR EMAIL\" class=\"form-control\" ng-change=\"trimInput(user.uid, 'uid')\" ng-model=\"user.uid\" autocomplete=\"on\" required tabindex=\"1\" autofocus=\"true\" focus-on=\"login-uid\" ng-keyup=\"$event.keyCode === 13 && !sendingRequest && submitUid()\">\n" +
+  "        <input name=\"uid\" placeholder=\"USERNAME\" class=\"form-control\" ng-change=\"trimInput(user.uid, 'uid')\" ng-model=\"user.uid\" autocomplete=\"on\" required tabindex=\"1\" autofocus=\"true\" focus-on=\"login-uid\" ng-keyup=\"$event.keyCode === 13 && !sendingRequest && submitUid()\">\n" +
   "        <label for=\"password\">&nbsp;</label>\n" +
   "        <input type=\"password\" placeholder=\"PASSWORD\" class=\"form-control\" ng-change=\"trimInput(user.password, 'password')\" required name=\"password\" ng-model=\"user.password\" tabindex=\"2\" focus-on=\"enter-password\" ng-keyup=\"$event.keyCode === 13 && user.password && !sendingRequest && submitPassword()\">\n" +
   "      </div>\n" +
@@ -250,7 +248,8 @@ angular.module("signin-modal.html", []).run(["$templateCache", function($templat
   "          </label>\n" +
   "        </div>\n" +
   "      <div class=\"cta-links clearfix\">\n" +
-  "        <button type=\"button\" class=\"submit-password btn btn-primary\" type=\"button\" ng-disabled=\"sendingRequest\" ng-click=\"user.password && submitPassword()\" tabindex=\"5\">{{ 'Submit' | i18n }}</button><br> <p><a ng-click=\"requestEmail()\">{{ 'Reset your password?' | i18n }}</a> / <a target=\"_blank\" href=\"{{supportLink}}\">{{ 'Contact Support' | i18n }}</a></p>\n" +
+  "        <button type=\"button\" class=\"submit-password btn btn-primary\" type=\"button\" ng-disabled=\"sendingRequest\" ng-click=\"user.password && submitPassword()\" tabindex=\"5\">{{ 'Submit' | i18n }}</button>\n" +
+  "        <p><a ng-click=\"requestEmail()\">{{ 'Reset your password?' | i18n }}</a> / <a target=\"_blank\" href=\"{{supportLink}}\">{{ 'Contact Support' | i18n }}</a></p>\n" +
   "\n" +
   "        <div ng-hide=\"true\">\n" +
   "          <p class=\"align-left\">{{ 'or' | i18n }}</p>\n" +
@@ -265,7 +264,7 @@ angular.module("signin-modal.html", []).run(["$templateCache", function($templat
   "\n" +
   "      <div class=\"form-group\">\n" +
   "        <label for=\"uid\">{{ 'EmailOrUsername' | i18n }}</label>\n" +
-  "        <input name=\"myuid\" class=\"form-control\" ng-model=\"user.uid\" autocomplete=\"on\" required tabindex=\"1\" autofocus=\"true\" focus-on=\"login-uid2\">\n" +
+  "        <input name=\"myuid\" class=\"form-control\" placeholder=\"User name (Your Email)\" ng-model=\"user.uid\" autocomplete=\"on\" required tabindex=\"1\" autofocus=\"true\" focus-on=\"login-uid2\">\n" +
   "\n" +
   "      </div>\n" +
   "      <div class=\"alert alert-warning\" ng-show=\"form.user.$error.noAccount\" bind-trusted-html=\"'No account found for your uid' | i18n\"></div>\n" +
@@ -282,20 +281,14 @@ angular.module("signin-modal.html", []).run(["$templateCache", function($templat
   "    <div class=\"checkEmail\" ng-show=\"currentState === MODALSTATE.checkEmail\">\n" +
   "      <div class=\"mailIcon clearfix\">\n" +
   "        <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n" +
-  "        <svg width=\"94px\" height=\"94px\" viewBox=\"0 0 94 94\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:sketch=\"http://www.bohemiancoding.com/sketch/ns\">\n" +
-  "            <title>Mail Icon</title>\n" +
-  "            <desc></desc>\n" +
-  "            <defs></defs>\n" +
-  "            <g id=\"Page-1\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\" sketch:type=\"MSPage\">\n" +
-  "              <g id=\"AC4\" sketch:type=\"MSArtboardGroup\" transform=\"translate(-126.000000, -92.000000)\">\n" +
-  "                <g id=\"Mail-Icon\" sketch:type=\"MSLayerGroup\" transform=\"translate(126.000000, 92.000000)\">\n" +
-  "                    <circle id=\"Oval-1\" fill=\"#3FB58E\" sketch:type=\"MSShapeGroup\" cx=\"47\" cy=\"47\" r=\"47\"></circle>\n" +
-  "                    <rect id=\"Rectangle-1\" fill=\"#FFFFFF\" sketch:type=\"MSShapeGroup\" x=\"18\" y=\"27\" width=\"59\" height=\"41\" rx=\"3\"></rect>\n" +
-  "                    <path d=\"M21.0069321,27 C19.3462494,27 17.9900756,28.3368135 17.9778938,29.9953973 C17.9778938,29.9953973 17.9712616,30.8538058 17.9707031,31.0256348 C17.9688241,31.6037734 44.3277476,50.7739169 44.3277476,50.7739169 C45.6547338,51.7409595 47.981989,52.0459954 49.4771883,51.3411914 C49.4771883,51.3411914 52.3180561,50.8603167 59.4023438,44.0800781 C61.1871084,42.3719134 77.0395508,31.2178814 77.0395508,30.1010742 C77.0395508,29.644898 77.0391066,29.9910722 77.0391066,29.9910722 C77.0175086,28.3391486 75.6568485,27 73.9930679,27 L21.0069321,27 Z\" id=\"Rectangle-95\" fill=\"#F3F3F3\" sketch:type=\"MSShapeGroup\"></path>\n" +
-  "                    <path d=\"M17.7634277,31.0032813 L46.7917565,50.276875 L75.0556641,31.3201563 L46.5782176,55.1035938 L17.7634277,31.0032813 Z\" id=\"Path-1\" fill=\"#D8D8D8\" sketch:type=\"MSShapeGroup\"></path>\n" +
-  "                </g>\n" +
-  "              </g>\n" +
-  "            </g>\n" +
+  "        <svg width=\"115\" height=\"66\" viewBox=\"0 0 115 66\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n" +
+  "          <path d=\"M26.2266 22.3947V7.31944C26.2266 3.82986 29.065 1 32.5651 1H106.92C110.421 1 113.259 3.82986 113.259 7.31944V57.9444C113.259 61.434 110.421 64.2639 106.92 64.2639H32.5651C29.065 64.2639 26.2266 61.434 26.2266 57.9444V41.9954\" stroke=\"#505068\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n" +
+  "          <path d=\"M1 19.0961H17.7401\" stroke=\"#505068\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n" +
+  "          <path d=\"M5.26611 46.1562H17.0666\" stroke=\"#505068\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n" +
+  "          <path d=\"M9.37012 32.6262H33.1279\" stroke=\"#505068\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n" +
+  "          <path d=\"M101.928 11.353L85.8383 26.0579L69.7425 40.7627L53.6467 26.0579L37.5566 11.353\" stroke=\"#505068\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n" +
+  "          <path d=\"M37.5566 54.316L60.3624 32.6262\" stroke=\"#505068\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n" +
+  "          <path d=\"M101.928 54.316L79.1226 32.6262\" stroke=\"#505068\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n" +
   "        </svg>\n" +
   "        <p>{{ 'tokenMessage' | i18n }}</p>\n" +
   "      </div>\n" +
@@ -314,20 +307,14 @@ angular.module("signin-modal.html", []).run(["$templateCache", function($templat
   "      <div class=\"email-container\">\n" +
   "        <div class=\"mailIcon text-center\">\n" +
   "          <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n" +
-  "          <svg width=\"94px\" height=\"94px\" viewBox=\"0 0 94 94\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:sketch=\"http://www.bohemiancoding.com/sketch/ns\">\n" +
-  "              <title>Mail Icon</title>\n" +
-  "              <desc></desc>\n" +
-  "              <defs></defs>\n" +
-  "              <g id=\"Page-1\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\" sketch:type=\"MSPage\">\n" +
-  "                  <g id=\"AC4\" sketch:type=\"MSArtboardGroup\" transform=\"translate(-126.000000, -92.000000)\">\n" +
-  "                      <g id=\"Mail-Icon\" sketch:type=\"MSLayerGroup\" transform=\"translate(126.000000, 92.000000)\">\n" +
-  "                          <circle id=\"Oval-1\" fill=\"#EB5054\" sketch:type=\"MSShapeGroup\" cx=\"47\" cy=\"47\" r=\"47\"></circle>\n" +
-  "                          <rect id=\"Rectangle-1\" fill=\"#FFFFFF\" sketch:type=\"MSShapeGroup\" x=\"18\" y=\"27\" width=\"59\" height=\"41\" rx=\"3\"></rect>\n" +
-  "                          <path d=\"M21.0069321,27 C19.3462494,27 17.9900756,28.3368135 17.9778938,29.9953973 C17.9778938,29.9953973 17.9712616,30.8538058 17.9707031,31.0256348 C17.9688241,31.6037734 44.3277476,50.7739169 44.3277476,50.7739169 C45.6547338,51.7409595 47.981989,52.0459954 49.4771883,51.3411914 C49.4771883,51.3411914 52.3180561,50.8603167 59.4023438,44.0800781 C61.1871084,42.3719134 77.0395508,31.2178814 77.0395508,30.1010742 C77.0395508,29.644898 77.0391066,29.9910722 77.0391066,29.9910722 C77.0175086,28.3391486 75.6568485,27 73.9930679,27 L21.0069321,27 Z\" id=\"Rectangle-95\" fill=\"#F3F3F3\" sketch:type=\"MSShapeGroup\"></path>\n" +
-  "                          <path d=\"M17.7634277,31.0032813 L46.7917565,50.276875 L75.0556641,31.3201563 L46.5782176,55.1035938 L17.7634277,31.0032813 Z\" id=\"Path-1\" fill=\"#D8D8D8\" sketch:type=\"MSShapeGroup\"></path>\n" +
-  "                      </g>\n" +
-  "                  </g>\n" +
-  "              </g>\n" +
+  "          <svg width=\"115\" height=\"66\" viewBox=\"0 0 115 66\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n" +
+  "            <path d=\"M26.2266 22.3947V7.31944C26.2266 3.82986 29.065 1 32.5651 1H106.92C110.421 1 113.259 3.82986 113.259 7.31944V57.9444C113.259 61.434 110.421 64.2639 106.92 64.2639H32.5651C29.065 64.2639 26.2266 61.434 26.2266 57.9444V41.9954\" stroke=\"#505068\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n" +
+  "            <path d=\"M1 19.0961H17.7401\" stroke=\"#505068\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n" +
+  "            <path d=\"M5.26611 46.1562H17.0666\" stroke=\"#505068\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n" +
+  "            <path d=\"M9.37012 32.6262H33.1279\" stroke=\"#505068\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n" +
+  "            <path d=\"M101.928 11.353L85.8383 26.0579L69.7425 40.7627L53.6467 26.0579L37.5566 11.353\" stroke=\"#505068\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n" +
+  "            <path d=\"M37.5566 54.316L60.3624 32.6262\" stroke=\"#505068\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n" +
+  "            <path d=\"M101.928 54.316L79.1226 32.6262\" stroke=\"#505068\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n" +
   "          </svg>\n" +
   "        </div>\n" +
   "        <div class=\"key-group\">\n" +
@@ -383,20 +370,14 @@ angular.module("signin-modal.html", []).run(["$templateCache", function($templat
   "    <div class=\"resetRequestSent\" ng-show=\"currentState === MODALSTATE.resetRequestSent\">\n" +
   "      <div class=\"mailIcon clearfix\">\n" +
   "        <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n" +
-  "        <svg width=\"94px\" height=\"94px\" viewBox=\"0 0 94 94\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:sketch=\"http://www.bohemiancoding.com/sketch/ns\">\n" +
-  "            <title>Mail Icon</title>\n" +
-  "            <desc></desc>\n" +
-  "            <defs></defs>\n" +
-  "            <g id=\"Page-1\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\" sketch:type=\"MSPage\">\n" +
-  "              <g id=\"AC4\" sketch:type=\"MSArtboardGroup\" transform=\"translate(-126.000000, -92.000000)\">\n" +
-  "                <g id=\"Mail-Icon\" sketch:type=\"MSLayerGroup\" transform=\"translate(126.000000, 92.000000)\">\n" +
-  "                    <circle id=\"Oval-1\" fill=\"#EB5054\" sketch:type=\"MSShapeGroup\" cx=\"47\" cy=\"47\" r=\"47\"></circle>\n" +
-  "                    <rect id=\"Rectangle-1\" fill=\"#FFFFFF\" sketch:type=\"MSShapeGroup\" x=\"18\" y=\"27\" width=\"59\" height=\"41\" rx=\"3\"></rect>\n" +
-  "                    <path d=\"M21.0069321,27 C19.3462494,27 17.9900756,28.3368135 17.9778938,29.9953973 C17.9778938,29.9953973 17.9712616,30.8538058 17.9707031,31.0256348 C17.9688241,31.6037734 44.3277476,50.7739169 44.3277476,50.7739169 C45.6547338,51.7409595 47.981989,52.0459954 49.4771883,51.3411914 C49.4771883,51.3411914 52.3180561,50.8603167 59.4023438,44.0800781 C61.1871084,42.3719134 77.0395508,31.2178814 77.0395508,30.1010742 C77.0395508,29.644898 77.0391066,29.9910722 77.0391066,29.9910722 C77.0175086,28.3391486 75.6568485,27 73.9930679,27 L21.0069321,27 Z\" id=\"Rectangle-95\" fill=\"#F3F3F3\" sketch:type=\"MSShapeGroup\"></path>\n" +
-  "                    <path d=\"M17.7634277,31.0032813 L46.7917565,50.276875 L75.0556641,31.3201563 L46.5782176,55.1035938 L17.7634277,31.0032813 Z\" id=\"Path-1\" fill=\"#D8D8D8\" sketch:type=\"MSShapeGroup\"></path>\n" +
-  "                </g>\n" +
-  "              </g>\n" +
-  "            </g>\n" +
+  "        <svg width=\"115\" height=\"66\" viewBox=\"0 0 115 66\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n" +
+  "          <path d=\"M26.2266 22.3947V7.31944C26.2266 3.82986 29.065 1 32.5651 1H106.92C110.421 1 113.259 3.82986 113.259 7.31944V57.9444C113.259 61.434 110.421 64.2639 106.92 64.2639H32.5651C29.065 64.2639 26.2266 61.434 26.2266 57.9444V41.9954\" stroke=\"#505068\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n" +
+  "          <path d=\"M1 19.0961H17.7401\" stroke=\"#505068\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n" +
+  "          <path d=\"M5.26611 46.1562H17.0666\" stroke=\"#505068\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n" +
+  "          <path d=\"M9.37012 32.6262H33.1279\" stroke=\"#505068\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n" +
+  "          <path d=\"M101.928 11.353L85.8383 26.0579L69.7425 40.7627L53.6467 26.0579L37.5566 11.353\" stroke=\"#505068\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n" +
+  "          <path d=\"M37.5566 54.316L60.3624 32.6262\" stroke=\"#505068\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n" +
+  "          <path d=\"M101.928 54.316L79.1226 32.6262\" stroke=\"#505068\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n" +
   "        </svg>\n" +
   "        <p>{{ 'resetMessage' | i18n }}</p>\n" +
   "      </div>\n" +
