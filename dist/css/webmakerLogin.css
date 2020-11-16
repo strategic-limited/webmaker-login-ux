@@ -955,7 +955,7 @@ p.subtitle-descrition {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid #EB5054 !important;
+  border: 1px solid #EB5054;
   border-radius: 27.5px !important;
   box-sizing: border-box;
   font-weight: 300 !important;
@@ -1034,7 +1034,7 @@ p.subtitle-descrition {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid #EB5054 !important;
+  border: 1px solid #EB5054;
   border-radius: 27.5px !important;
   box-sizing: border-box;
   font-weight: 300 !important;
