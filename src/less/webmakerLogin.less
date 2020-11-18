@@ -642,7 +642,7 @@
   height: 151px;
   background-size: 97px;
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: center center;
   position: relative;
   margin: 0 !important;
 }
@@ -655,8 +655,8 @@
 }
 
 .modal-content .modal-body .checkbox label div {
-  width: 17px !important;
-  height: 17px !important;
+  width: 18px !important;
+  height: 18px !important;
 }
 
 .modal-content .modal-body label[for=webmaker-login-email], .modal-content .modal-body label[for=uid], .modal-content .modal-body label[for=key], .modal-content .modal-body label[for=persona-username], .modal-content .modal-body label[for=password], .modal-content .modal-body label[for=value], .modal-content .modal-body label[for=confirmValue] {
@@ -760,7 +760,9 @@ a:hover, a:focus {
 }
 
 .modal-content .modal-body .cta-links p {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   margin: 22px 0 0 0;
 }
@@ -832,6 +834,7 @@ p.subtitle-descrition {
 .webmaker-login-ux.fade.in {
   display: flex !important;
   flex-direction: column;
+  overflow: hidden;
 }
 .modal-description {
   width: 100% !important;
@@ -928,7 +931,7 @@ p.subtitle-descrition {
   box-sizing: border-box;
   font-weight: 300 !important;
   background: none !important;
-  margin: 0 auto 45px;
+  margin: 0 auto 40px;
   float: none !important;
   text-transform: capitalize;
   font-size: 22px !important;
@@ -950,8 +953,8 @@ p.subtitle-descrition {
   text-transform: capitalize;
 }
 .modal-dialog .remember-me-password label div {
-  width: 17px;
-  height: 17px;
+  width: 18px;
+  height: 18px;
   border: 1px solid #505068;
   border-radius: 4px;
   display: flex;
