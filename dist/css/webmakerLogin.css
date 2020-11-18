@@ -673,10 +673,10 @@
 }
 .vrlogo {
   width: 149px;
-  height: 151px;
+  height: 130px;
   background-size: 97px;
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: center center;
   position: relative;
   margin: 0 !important;
 }
@@ -686,8 +686,8 @@
   background-repeat: no-repeat;
 }
 .modal-content .modal-body .checkbox label div {
-  width: 17px !important;
-  height: 17px !important;
+  width: 18px !important;
+  height: 18px !important;
 }
 .modal-content .modal-body label[for=webmaker-login-email],
 .modal-content .modal-body label[for=uid],
@@ -787,7 +787,15 @@ a:focus {
   cursor: pointer;
 }
 .modal-content .modal-body .cta-links p {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   margin: 22px 0 0 0;
 }
@@ -856,6 +864,7 @@ p.subtitle-descrition {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  overflow: hidden;
 }
 .modal-description {
   width: 100% !important;
@@ -960,7 +969,7 @@ p.subtitle-descrition {
   box-sizing: border-box;
   font-weight: 300 !important;
   background: none !important;
-  margin: 0 auto 45px;
+  margin: 0 auto 40px;
   float: none !important;
   text-transform: capitalize;
   font-size: 22px !important;
@@ -982,8 +991,8 @@ p.subtitle-descrition {
   text-transform: capitalize;
 }
 .modal-dialog .remember-me-password label div {
-  width: 17px;
-  height: 17px;
+  width: 18px;
+  height: 18px;
   border: 1px solid #505068;
   border-radius: 4px;
   display: -webkit-box;
