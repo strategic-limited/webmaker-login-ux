@@ -81,11 +81,11 @@ module.exports={
     "description": "Header text for the sign in modal dialog"
   },
   "Wrapper Title": {
-    "message": "Cloud-Based. Personalization. No Rendering.",
+    "message": "Cloud-Based. Personalization. Dynamic Rendering.",
     "description": ""
   },
   "Wrapper Subtitle": {
-    "message": "We are a dynamic & revolutionary video solution for cloud-based video creation, editing, & personalization. Create personalized videos with NO rendering!",
+    "message": "We are a dynamic & revolutionary video solution for cloud-based video creation, editing, & personalization. Create personalized videos with dynamic rendering!",
     "description": ""
   },
   "Sign in":  {
