@@ -399,8 +399,10 @@ ngModule.directive('wmSignin', [
               signinController.verifyPassword($scope.user.uid, $scope.user.password, $scope.user.rememberMe);
             };
 
-            $scope.requestReset = function () {
-              signinController.requestReset($scope.user.uid);
+            $scope.requestReset = function (invalidEmail) {
+              if (!invalidEmail) {
+                signinController.requestReset($scope.user.uid);
+              }
             };
 
             $scope.close = function () {

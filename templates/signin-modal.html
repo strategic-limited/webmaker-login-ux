@@ -71,18 +71,29 @@
     <!-- end enter uid -->
 
     <!-- Enter Email -->
-    <div ng-show="currentState === MODALSTATE.enterEmail;">
+    <div ng-show="currentState === MODALSTATE.enterEmail">
 
       <div class="form-group">
         <label for="uid">{{ 'EmailOrUsername' | i18n }}</label>
-        <input name="myuid" class="form-control" placeholder="User name (Your Email)" ng-model="user.uid" autocomplete="on" required tabindex="1" autofocus="true" focus-on="login-uid2">
-
+        <input
+          type="email"
+          name="myuid"
+          class="form-control"
+          placeholder="User name (Your Email)"
+          ng-model="user.uid"
+          autocomplete="on"
+          required
+          tabindex="1"
+          autofocus="true"
+          focus-on="login-uid2"
+          pattern="[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}"
+        >
       </div>
       <div class="alert alert-warning" ng-show="form.user.$error.noAccount" bind-trusted-html="'No account found for your uid' | i18n"></div>
        <div class="alert alert-danger" ng-show="form.user.$error.passwordSigninFailed" ng-bind-html="'passLoginFailed' | i18n"></div>
       <div class="alert alert-danger" ng-show="form.user.$error.invalidUid" ng-bind-html="'That does not look like an email address or username' | i18n"></div>
       <div class="cta-links clearfix">
-        <p><a ng-click="requestReset()">{{ 'Click to Reset your password' | i18n }}</a></p>
+        <p><a ng-click="requestReset(form.user.$error.invalidUid)">{{ 'Click to Reset your password' | i18n }}</a></p>
         <p class="align-left"><a href="">{{ 'Back' | i18n }}</a></p>
       </div>
     </div>
