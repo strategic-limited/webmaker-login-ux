@@ -458,12 +458,20 @@
           align-items: center;
 }
 .modal-content .modal-body .checkbox label div {
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-right: 6px;
-  border: 1px solid #CCC;
-  text-align: center;
-  background-color: #ffffff;
+  border: 1px solid #505068;
 }
 .modal-content .modal-body .checkbox label div span {
   display: inline-block;
@@ -989,21 +997,6 @@ p.subtitle-descrition {
   color: #fff;
   position: relative;
   text-transform: capitalize;
-}
-.modal-dialog .remember-me-password label div {
-  width: 18px;
-  height: 18px;
-  border: 1px solid #505068;
-  border-radius: 4px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 .modal-dialog .remember-me-password label div span:after {
   content: none !important;

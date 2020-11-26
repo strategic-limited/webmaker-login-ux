@@ -406,12 +406,14 @@
 
         div {
           // Creates the checkbox
-          width: 24px;
-          height: 24px;
+          width: 18px;
+          height: 18px;
+          border-radius: 4px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           margin-right: 6px;
-          border: 1px solid #CCC;
-          text-align: center;
-          background-color: @wlux-white;
+          border: 1px solid #505068;
           span {
             display: inline-block;
             position: relative;
@@ -951,15 +953,6 @@ p.subtitle-descrition {
   color: #fff;
   position: relative;
   text-transform: capitalize;
-}
-.modal-dialog .remember-me-password label div {
-  width: 18px;
-  height: 18px;
-  border: 1px solid #505068;
-  border-radius: 4px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .modal-dialog .remember-me-password label div span:after {
   content: none !important;
