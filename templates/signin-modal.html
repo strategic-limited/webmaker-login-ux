@@ -86,7 +86,7 @@
           tabindex="1"
           autofocus="true"
           focus-on="login-uid2"
-          pattern="[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}"
+          pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$"
         >
       </div>
       <div class="alert alert-warning" ng-show="form.user.$error.noAccount" bind-trusted-html="'No account found for your uid' | i18n"></div>
