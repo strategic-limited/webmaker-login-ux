@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
 @wlux-screen-xs-min: 480px;
 @wlux-screen-xs-max: 479px;
 @wlux-green: #3fb58e;
@@ -803,7 +803,7 @@ a:hover, a:focus {
   float: left;
   justify-content: center;
   b {
-    font-weight: 600;
+    font-weight: 900;
   }
 }
 
@@ -840,7 +840,7 @@ p.subtitle-descrition {
 }
 .modal-description {
   width: 100% !important;
-  max-width: 900px;
+  max-width: 960px;
   margin: 0 auto 50px !important;
   height: auto !important;
   float: none !important;
@@ -853,6 +853,7 @@ p.subtitle-descrition {
   color: #8A8F98;
   text-align: center;
   font-family: "Inter", sans-serif;
+  font-weight: 400;
 }
 .modal-description b {
   width: 80%;
@@ -860,7 +861,6 @@ p.subtitle-descrition {
   margin: 0 auto 50px;
   font-size: 48px;
   line-height: 54px;
-  font-weight: bolder;
   text-align: center;
   color: #fff;
 }
@@ -1034,4 +1034,24 @@ p.subtitle-descrition {
   font: 20px 'Inter', sans-serif;
   text-transform: capitalize;
 }
-
+@media screen and (min-width: 2000px) {
+  .modal-dialog {
+    width: 470px !important;
+  }
+  .modal-description {
+    max-width: 1300px;
+    margin: 300px auto 50px !important;
+  }
+  .modal-description div {
+    font-size: 25px;
+    line-height: 35px;
+  }
+  .modal-description b {
+    font-size: 66px;
+    line-height: 80px;
+  }
+  .modal-body .cta-links .submit-password.btn.btn-primary {
+    width: 270px !important;
+    height: 60px !important;
+  }
+}

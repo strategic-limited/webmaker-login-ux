@@ -5,6 +5,13 @@
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfMZg.ttf) format('truetype');
 }
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v2/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuBWYMZg.ttf) format('truetype');
+}
 @media screen and (min-device-width: 320px) and (max-device-width: 375px) and (orientation: portrait) {
   .fade.in {
     overflow: hidden !important;
@@ -842,7 +849,7 @@ a:focus {
           justify-content: center;
 }
 .modal-description b {
-  font-weight: 600;
+  font-weight: 900;
 }
 p.subtitle-descrition {
   font-weight: 600;
@@ -876,7 +883,7 @@ p.subtitle-descrition {
 }
 .modal-description {
   width: 100% !important;
-  max-width: 900px;
+  max-width: 960px;
   margin: 0 auto 50px !important;
   height: auto !important;
   float: none !important;
@@ -891,6 +898,7 @@ p.subtitle-descrition {
   color: #8A8F98;
   text-align: center;
   font-family: "Inter", sans-serif;
+  font-weight: 400;
 }
 .modal-description b {
   width: 80%;
@@ -898,7 +906,6 @@ p.subtitle-descrition {
   margin: 0 auto 50px;
   font-size: 48px;
   line-height: 54px;
-  font-weight: bolder;
   text-align: center;
   color: #fff;
 }
@@ -1091,4 +1098,25 @@ p.subtitle-descrition {
   color: #fff;
   font: 20px 'Inter', sans-serif;
   text-transform: capitalize;
+}
+@media screen and (min-width: 2000px) {
+  .modal-dialog {
+    width: 470px !important;
+  }
+  .modal-description {
+    max-width: 1300px;
+    margin: 300px auto 50px !important;
+  }
+  .modal-description div {
+    font-size: 25px;
+    line-height: 35px;
+  }
+  .modal-description b {
+    font-size: 66px;
+    line-height: 80px;
+  }
+  .modal-body .cta-links .submit-password.btn.btn-primary {
+    width: 270px !important;
+    height: 60px !important;
+  }
 }
