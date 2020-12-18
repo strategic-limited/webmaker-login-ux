@@ -63,8 +63,6 @@
   }
   .modal.in .modal-dialog {
     width: 70% !important;
-    margin-top: 19% !important;
-    margin-left: 0 !important;
     margin-right: 16% !important;
     margin-bottom: 0 !important;
     line-height: 43px !important;
@@ -1103,9 +1101,12 @@ p.subtitle-descrition {
   .modal-dialog {
     width: 470px !important;
   }
+  .modal-content .form-group > input {
+    margin-bottom: 3em !important;
+  }
   .modal-description {
     max-width: 1300px;
-    margin: 300px auto 50px !important;
+    margin: 100px auto 50px !important;
   }
   .modal-description div {
     font-size: 25px;
@@ -1118,5 +1119,6 @@ p.subtitle-descrition {
   .modal-body .cta-links .submit-password.btn.btn-primary {
     width: 270px !important;
     height: 60px !important;
+    margin-top: 2em;
   }
 }
